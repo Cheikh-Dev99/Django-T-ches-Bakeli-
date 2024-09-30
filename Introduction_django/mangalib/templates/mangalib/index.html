@@ -1,0 +1,33 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MangaLib</title>
+
+    <link rel="stylesheet" href="{% static "mangalib/css/main.css" %}">
+    {% comment %} 
+    <script src="{% static 'js/script.js' %}"></script> 
+    {% endcomment %}
+    <link rel="icon" type="image/png" href="{% static 'img/Python-Django.png' %}">
+</head>
+<body>
+    {% now ' d/m/Y H:i:s' %}
+    
+    <h1 style="color: red">{{titre}}</h1>
+    <p>{{message}}<p/>
+
+
+    {% include './other.html' %}
+
+    <p>Render-vous sur  <a href="{% url 'indexOfMnglib' %}">MangaLib</a></p>
+
+
+  {% comment %}
+    ceci est un commentaire en djngo ...    
+  {% endcomment %}
+</body>
+</html>

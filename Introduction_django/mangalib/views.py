@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import  HttpResponse
 
 def index(request):
-  return HttpResponse("Bienvenue sur mangalib ♥ !")
+  contexte = {'titre': 'Bienvenue sur Mangalib',
+              'message': 'MangaLib est un site web destiner aux amoureux du Mangas'
+  }
+  return render(request, 'mangalib/index.html', contexte)
