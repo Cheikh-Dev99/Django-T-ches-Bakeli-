@@ -15,19 +15,6 @@
     <link rel="icon" type="image/png" href="{% static 'img/Python-Django.png' %}">
 </head>
 <body>
-    {% now ' d/m/Y H:i:s' %}
-    
-    <h1 style="color: red">{{titre}}</h1>
-    <p>{{message}}<p/>
-
-
-    {% include './other.html' %}
-
-    <p>Render-vous sur  <a href="{% url 'indexOfMnglib' %}">MangaLib</a></p>
-
-
-  {% comment %}
-    ceci est un commentaire en djngo ...    
-  {% endcomment %}
+    {% include './Balises&Filtre.html' %}
 </body>
 </html>

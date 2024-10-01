@@ -1,0 +1,21 @@
+{% now ' d/m/Y H:i:s' %}
+    
+    <h1 style="color: red">{{titre}}</h1>
+    <p>{{message}}<p/>
+    {% comment %}  {% endcomment %}
+
+    {% include './other.html' %}
+    {% comment %}  {% endcomment %}
+
+    <p>Render-vous sur  <a href="{% url 'indexOfMnglib' %}">MangaLib</a></p>
+    
+      {% for user in users %}
+        <li>{{ user }}</li>
+      {% empty%}
+        <p>Aucune utilisateur n'est disponible ...</p>
+      {% endfor %}
+
+
+  {% comment %}
+    ceci est un commentaire en djngo ...    
+  {% endcomment %}

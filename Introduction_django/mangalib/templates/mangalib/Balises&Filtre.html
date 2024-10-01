@@ -1,0 +1,30 @@
+<h1 style="color: green">{{titre2}}</h1>
+
+<p>{{message|truncatewords:10}}</p>
+<p>la variable message comporte {{message1|length}} caractères</p>
+<p>la variable message en minuscule: {{message1|lower}}</p>
+<p>la variable message en majuscule: {{message1|upper}}</p>
+<p>Nous somme le : {{D1|date:"d/m/Y"}} à {{ D1|date:"H\hi" }}</p>
+<p>Publier il y a : {{D2|timesince:D1}}</p>
+<p>Nom d'utilisateur : {{username|default:"inconnue"}}</p>
+<p>url : {{link}}</p>
+<p>url encodée : {{link|urlencode}}</p>
+<p>text urliser : {{text|urlize}}</p>
+<p>url tronquer : {{text|urlizetrunc:5}}</p>
+
+<p>
+    {% if numberOfNews > 0 %}
+        <p>{{numberOfNews}} Actualité{{numberOfNews|pluralize}}</p>
+    {% else %}
+        <p>Ancune actualité disponible</p>
+    {% endif %}    
+</p>
+
+{% if citations %}
+    <h3>Citations : </h3>
+    <ul>
+        <li>{{ citations|random}}</li>
+    </ul>
+{% else %}
+    <p><B>Citations : </B>Aucune citations disponible ...</p>
+{% endif %}
