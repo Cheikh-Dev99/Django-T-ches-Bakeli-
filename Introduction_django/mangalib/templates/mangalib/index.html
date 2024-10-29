@@ -1,4 +1,5 @@
 {%  load static %}
+{% comment %} {%  load customtags %} {% endcomment %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,13 +9,14 @@
 
     <title>MangaLib</title>
 
-    <link rel="stylesheet" href="{% static "mangalib/css/main.css" %}">
-    {% comment %} 
-    <script src="{% static 'js/script.js' %}"></script> 
-    {% endcomment %}
+    <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
+    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
     <link rel="icon" type="image/png" href="{% static 'img/Python-Django.png' %}">
 </head>
 <body>
-    {% include './Balises&Filtre.html' %}
+    {% comment %} {% include './Balises&Filtre1.html' %} {% endcomment %}
+    {% include './index3.html' %}
+    {% include './show.html' %}
+    {% comment %} {% include '../../templatetags/customtags.py' %}; {% endcomment %}
 </body>
 </html>

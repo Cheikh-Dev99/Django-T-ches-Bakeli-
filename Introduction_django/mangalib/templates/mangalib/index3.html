@@ -1,0 +1,14 @@
+<center>
+  <h1 style="color: red">{{ titre }}</h1>
+</center>
+
+<legend>Liste des mangas disponibles : </legend>
+<ul>
+  {% for livre in Livres %}
+    <li>
+      <a href="{% url 'mangalib:show' livre.id %}">
+        {{ livre.titre }} ({{ livre.auteur.prenom }} {{ livre.auteur.nom }})
+      </a>
+    </li>
+  {% endfor %}
+</ul>
