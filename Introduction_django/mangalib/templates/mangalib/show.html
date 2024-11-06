@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes mangas</title>
+  <title>Show</title>
   {% comment %} <link rel="stylesheet" href="{% static 'reset.css' %}"> {% endcomment %}
-  {% comment %} <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
 </head>
 <body>
   <center><h1 style="color: red">{{Livre.titre}}</h1></center>
@@ -16,11 +16,5 @@
   <p>Prix : {{ Livre.prix }}</p>
   <p>Quantité : {{Livre.quentite}}</p>
   <p><a href="{% url 'mangalib:index3' %}">&laquo; Revenir à la liste</a></p>
-
-  <ul>
-    {% for livre in Livres %}
-      <li>{{ livre.titre }} ({{ livre.auteur.prenom }} {{ livre.auteur.nom }})</li>
-    {% endfor %}
-  </ul>
 </body>
 </html>

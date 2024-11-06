@@ -1,4 +1,14 @@
-<center>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index3</title>
+  <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
+</head>
+<body>
+  <center>
   <h1 style="color: red">{{ titre }}</h1>
 </center>
 
@@ -12,3 +22,11 @@
     </li>
   {% endfor %}
 </ul>
+
+<p>
+  <a href="{% url 'mangalib:add'  %}">Ajouter manga</a> |
+  <a href="{% url 'mangalib:edit'  %}">Modifier manga</a> |
+  <a href="{% url 'mangalib:supp'  %}">Supprimer manga</a> |
+</p>
+</body>
+</html>

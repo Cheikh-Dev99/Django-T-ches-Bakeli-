@@ -1,0 +1,12 @@
+body{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+a{
+  color: red;
+  text-decoration: none;
+}
