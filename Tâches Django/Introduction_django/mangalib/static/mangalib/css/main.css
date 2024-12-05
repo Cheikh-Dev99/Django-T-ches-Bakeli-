@@ -10,3 +10,7 @@ a{
   color: red;
   text-decoration: none;
 }
+
+.formulaire{
+  display: flex
+}

@@ -13,7 +13,7 @@ class Auteur(models.Model):
     verbose_name_plural = "Auteurs"
   
 class Livre(models.Model):
-  titre = models.CharField(max_length=200, unique=True)
+  titre = models.CharField(max_length=32, unique=True)
   auteur = models.ForeignKey(Auteur, on_delete=models.CASCADE)
   genre = models.CharField(max_length=50)
   annee_edition = models.PositiveIntegerField()

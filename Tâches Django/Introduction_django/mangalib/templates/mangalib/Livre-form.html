@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index3</title>
+  <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
+</head>
+<body>
+  <center>
+    <h1 style="color: red">Ajout/Edition d'un nouveau livre</h1>
+  </center>
+
+  <form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Ajouter">
+  <p><a href="{% url 'mangalib:index3' %}">↩</a></p>
+  </form>
+</body>
+</html>

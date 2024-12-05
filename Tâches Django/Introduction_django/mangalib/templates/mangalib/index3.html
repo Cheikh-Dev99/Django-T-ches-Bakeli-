@@ -13,20 +13,26 @@
 </center>
 
 <legend>Liste des mangas disponibles : </legend>
-<ul>
-  {% for livre in Livres %}
-    <li>
-      <a href="{% url 'mangalib:show' livre.id %}">
-        {{ livre.titre }} ({{ livre.auteur.prenom }} {{ livre.auteur.nom }})
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+<p><a href="{% url 'mangalib:add'  %}">Ajouter manga ➕</a></p>
 
-<p>
-  <a href="{% url 'mangalib:add'  %}">Ajouter manga</a> |
-  <a href="{% url 'mangalib:edit'  %}">Modifier manga</a> |
-  <a href="{% url 'mangalib:supp'  %}">Supprimer manga</a> |
-</p>
+<table style="width: 100%; height: auto">
+  <tr style="background:red;">
+    <th>Nom</th>
+    <th>Auteur</th>
+    <th>Qts</th>
+    <th colspan="2">Actions</th>
+  </tr>
+  {% for livre in Livres %}
+    <tr style="background:white;" >
+      <td>
+        <a href="{% url 'mangalib:show' livre.id %}">{{ livre.titre }}</a>
+      </td>
+      <td style="color:black;">{{ livre.auteur.prenom }} {{ livre.auteur.nom }}</td>
+      <td style="color:black;">{{ livre.quantite }}</td>
+      <td><a href="{% url 'mangalib:edit' livre.id %}">🖋</a></td>
+      <td><a href="{% url 'mangalib:supp'  livre.id %}">❌</a></td>
+    </tr>
+  {% endfor %}
+</table>
 </body>
 </html>
