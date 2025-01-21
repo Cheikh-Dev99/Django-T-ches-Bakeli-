@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mangalib/', include('mangalib.urls')),
+    path('authentification/', include('authentification.urls')),
 ]

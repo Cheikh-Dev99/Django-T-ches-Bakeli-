@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
 </head>
 <body>
+  {% if user.is_authenticated %}
+    <p>
+      Connecter en tant que : {{ user.username }}  | 
+      <a href="{% url "authentification:logout" %}">Se déconnection</a>
+    </p>
+  {% else %}
+    <p>
+      <a href="{% url "authentification:login" %}">Connection</a> |
+      <a href="{% url "authentification:register" %}">Inscription</a>
+    </p>
+  {% endif %}
   <center>
   <h1 style="color: red">{{ titre }}</h1>
 </center>

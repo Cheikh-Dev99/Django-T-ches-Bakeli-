@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mangalib',
+    'authentification',
+    'tailwind',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -117,9 +120,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'Introduction_django/static']
+STATICFILES_DIRS = [
+    BASE_DIR / 'Introduction_django/static',
+    BASE_DIR / 'authentification/static',
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
+
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
