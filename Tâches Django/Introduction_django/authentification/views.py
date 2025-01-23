@@ -23,7 +23,6 @@ def register_user(request):
         form = CustomUserCreationForm()
 
     return render(request, 'authentification/register.html', {'form': form})
-
 # ---------- Connexion ------------
 def login_user(request):
     if request.method == 'POST':
@@ -41,7 +40,6 @@ def login_user(request):
 
     form = AuthenticationForm()
     return render(request, "authentification/login.html", {"form": form})
-
 # ---------- Déconnexion -----------
 def logout_user(request):
     logout(request)

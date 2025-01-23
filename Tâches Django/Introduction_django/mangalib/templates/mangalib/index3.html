@@ -11,27 +11,27 @@
   {% if user.is_authenticated %}
     <p>
       Connecter en tant que : {{ user.username }}  | 
-      <a href="{% url "authentification:logout" %}">Se déconnection</a>
+      <a href="{% url "authentification:logout" %}">Se déconnecter</a>
     </p>
   {% else %}
     <p>
-      <a href="{% url "authentification:login" %}">Connection</a> |
-      <a href="{% url "authentification:register" %}">Inscription</a>
+      Vous avez un compte ? <a href="{% url 'authentification:login' %}" class="text-red-600 hover:underline">Se connecter</a> / <a href="{% url 'authentification:register' %}" class="text-red-600 hover:underline">Créer un compte</a>
     </p>
   {% endif %}
-  <center>
   <h1 style="color: red">{{ titre }}</h1>
-</center>
 
 <legend>Liste des mangas disponibles : </legend>
-<p><a href="{% url 'mangalib:add'  %}">Ajouter manga ➕</a></p>
-
+{% if user.is_authenticated %}
+  <p><a href="{% url 'mangalib:add'  %}">Ajouter manga ➕</a></p>
+{% endif %} 
 <table style="width: 100%; height: auto">
   <tr style="background:red;">
     <th>Nom</th>
     <th>Auteur</th>
     <th>Qts</th>
-    <th colspan="2">Actions</th>
+    {% if user.is_authenticated %}
+      <th colspan="2">Actions</th>
+    {% endif %}
   </tr>
   {% for livre in Livres %}
     <tr style="background:white;" >
@@ -40,8 +40,10 @@
       </td>
       <td style="color:black;">{{ livre.auteur.prenom }} {{ livre.auteur.nom }}</td>
       <td style="color:black;">{{ livre.quantite }}</td>
-      <td><a href="{% url 'mangalib:edit' livre.id %}">🖋</a></td>
-      <td><a href="{% url 'mangalib:supp'  livre.id %}">❌</a></td>
+      {% if user.is_authenticated %}
+        <td><a href="{% url 'mangalib:edit' livre.id %}">🖋</a></td>
+        <td><a href="{% url 'mangalib:supp'  livre.id %}">❌</a></td>
+      {% endif %}
     </tr>
   {% endfor %}
 </table>

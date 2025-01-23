@@ -7,16 +7,16 @@
     <title>Connexion</title>
     {% tailwind_css %}
   </head>
-  <body class="bg-green-500 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+  <body class="bg-red-500 flex items-center justify-center min-h-screen">
+    <div class="bg-white text-white p-8 rounded-lg shadow-lg max-w-sm w-full">
       {% for message in messages %}
         <p class="text-red-500 text-center mb-4">{{ message }}</p>
       {% endfor %}
-      <h1 class="text-2xl font-bold text-center mb-6">Connexion</h1>
+      <h1 class="text-2xl text-black font-bold text-center mb-6">Connexion</h1>
       <form method="post" class="space-y-4">
         {% csrf_token %}
         <div>
-          <label for="username" class="block text-sm font-medium text-gray-700"
+          <label for="username" class="block text-sm font-medium text-red-700"
             >Nom d'utilisateur</label
           >
           <input
@@ -24,11 +24,11 @@
             name="username"
             id="username"
             placeholder="Entrer le nom d'utilisateur"
-            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
           />
         </div>
         <div>
-          <label for="password" class="block text-sm font-medium text-gray-700"
+          <label for="password" class="block text-sm font-medium text-red-700"
             >Mot de passe</label
           >
           <input
@@ -36,17 +36,17 @@
             name="password"
             id="password"
             placeholder="Entrer le mot de passe"
-            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
           />
         </div>
         <button
           type="submit"
-          class="w-full bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
+          class="w-full bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
         >
           Se Connecter
         </button>
         <p class="text-center text-sm text-gray-500">
-          Vous n'avez pas de compte ? <a href="{% url 'authentification:register' %}" class="text-green-600 hover:underline">Créer un compte</a>
+          Vous n'avez pas de compte ? <a href="{% url 'authentification:register' %}" class="text-red-600 hover:underline">Créer un compte</a>
         </p>
       </form>
     </div>
